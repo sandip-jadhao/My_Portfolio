@@ -397,7 +397,9 @@
       <!-- Form Container -->
       <div class="d-flex justify-content-center ">
         <div style="max-width: 600px; width: 100%;">
-          <form action="POST" data-netlify="true">
+          <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+            <input type="hidden" name="form-name" value="contact">
+
             <div>
               <label for="name" class="form-label">Your Name</label>
               <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
@@ -418,9 +420,11 @@
               <textarea id="message" name="message" class="form-control" rows="5" placeholder="Message"
                 required></textarea>
             </div>
+
             <div class="field">
               <div data-netlify-recaptcha="true"></div>
             </div>
+            
             <div class="col-12 text-center">
               <div class="loading mb-2" style="display:none;">Loading...</div>
               <div class="error-message mb-2 text-danger" style="display:none;"></div>
